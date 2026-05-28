@@ -10,6 +10,7 @@ const interviews = [
     host: "Dr. Pele",
     platform: "Dr. Pele Platform",
     logo: "/images/drpele.png",
+    url: "https://drpele.com/080-practicing-the-skill-of-happiness-with-rebecca-norrington/",
     description: "Rebecca discusses happiness as a learnable skill, practical daily habits, and how to find peace in difficult circumstances.",
     color: "border-sage bg-sage/10"
   },
@@ -19,6 +20,7 @@ const interviews = [
     host: "A Fresh Perspective",
     platform: "A Fresh Perspective Podcast",
     logo: "/images/freshperspective.png",
+    url: "http://reclaimyourhealth.us/a-fresh-perspective-on-grief/",
     description: "A conversation on navigating grief while maintaining inner stability — and how happiness practices support the healing journey.",
     color: "border-terracotta bg-terracotta/10"
   },
@@ -28,15 +30,17 @@ const interviews = [
     host: "Reclaim Your Health",
     platform: "Reclaim Your Health Podcast",
     logo: "/images/reclaimyourhealth.png",
+    url: "http://reclaimyourhealth.us/truth-about-happiness/",
     description: "Rebecca's core philosophy on what happiness really is, how to build it daily, and why so many people get stuck.",
     color: "border-gold bg-gold/10"
   },
   {
     type: "Radio",
-    title: "The Truth About Happiness",
+    title: "BITERADIO ME: The Truth About Happiness",
     host: "BITERADIO ME",
     platform: "BlogTalkRadio",
     logo: "/images/biteradio.png",
+    url: "https://www.blogtalkradio.com/biteradiome/2014/05/19/realityspirituality-the-truth-about-happiness-with-author-rebecca-norrington",
     description: "A radio discussion on the practical tools and mindset shifts that make sustained happiness possible.",
     color: "border-sage bg-sage/10"
   },
@@ -46,6 +50,7 @@ const interviews = [
     host: "Mantz & Mitchell",
     platform: "Mantz & Mitchell Show",
     logo: "/images/mantz.png",
+    url: "https://mantzandmitchell.com/tag/rebecca-norrington/",
     description: "Rebecca joins Mantz & Mitchell to explore the intersection of real-world challenges and spiritual practice.",
     color: "border-terracotta bg-terracotta/10"
   }
@@ -102,7 +107,12 @@ const interviews = [
 
     <div class="space-y-5">
       {interviews.map(interview => (
-        <div class={`p-7 rounded-2xl border ${interview.color} hover:shadow-md transition-shadow duration-200`}>
+        <a
+          href={interview.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`block p-7 rounded-2xl border ${interview.color} hover:shadow-md transition-all duration-200 hover:-translate-y-0.5`}
+        >
           <div class="flex flex-col md:flex-row md:items-center gap-6">
             {interview.logo && (
               <div class="shrink-0">
@@ -123,8 +133,13 @@ const interviews = [
               <p class="text-sm text-charcoal-light">with <strong>{interview.host}</strong></p>
               <p class="text-sm text-charcoal-light leading-relaxed mt-2">{interview.description}</p>
             </div>
+            <div class="shrink-0">
+              <svg class="w-5 h-5 text-charcoal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </section>
