@@ -336,7 +336,11 @@ const featuredTestimonials = testimonials.slice(0, 6);
   </section>
 
   <!-- PODCASTS / INTERVIEWS -->
-  <section class="section-padding max-w-7xl mx-auto px-6">
+  <section class="relative section-padding overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <img src="/images/podcast-rebecca.jpg" alt="" class="w-full h-full object-cover object-center" />
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
     <SectionHeading
       eyebrow="Listen & Watch"
       title="Interviews & Podcasts"
@@ -374,6 +378,7 @@ const featuredTestimonials = testimonials.slice(0, 6);
 
     <div class="text-center mt-8">
       <Button href="/interviews" variant="outline">View All Interviews</Button>
+    </div>
     </div>
   </section>
 
