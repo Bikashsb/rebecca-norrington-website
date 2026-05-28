@@ -7,6 +7,7 @@
     "description": "Individualized counseling addressing your personal challenges and goals. Weekly sessions recommended over 3+ months for lasting transformation.",
     "icon": "heart",
     "cta": "Book a Session",
+    "paypalUrl": "https://www.paypal.com/paypalme/rebeccalnorrington/85",
     "featured": true
   },
   {
@@ -17,6 +18,7 @@
     "description": "An educational program teaching you to manage happiness even during life's difficulties. Covers relationship improvement, emotional regulation, parenting, and personal responsibility.",
     "icon": "sun",
     "cta": "Enroll Now",
+    "paypalUrl": "https://www.paypal.com/paypalme/rebeccalnorrington/240",
     "featured": true
   },
   {
@@ -27,6 +29,7 @@
     "description": "AFAA-certified body toning and flexibility training targeting all major muscle groups. Build strength and mobility in a supportive, encouraging environment.",
     "icon": "activity",
     "cta": "Join Class",
+    "paypalUrl": "https://www.paypal.com/paypalme/rebeccalnorrington/195",
     "featured": false
   },
   {
@@ -37,6 +40,7 @@
     "description": "Low-impact cardio with balance exercises designed to prevent falls, improve posture, and build lasting physical confidence — accessible for all fitness levels.",
     "icon": "shield",
     "cta": "Join Class",
+    "paypalUrl": "https://www.paypal.com/paypalme/rebeccalnorrington/195",
     "featured": false
   },
   {
@@ -47,6 +51,7 @@
     "description": "Self-myofascial release training to address muscle tension, promote circulation, and accelerate recovery. A deeply restorative practice for body and mind.",
     "icon": "zap",
     "cta": "Join Class",
+    "paypalUrl": "https://www.paypal.com/paypalme/rebeccalnorrington/195",
     "featured": false
   }
 ]

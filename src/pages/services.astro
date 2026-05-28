@@ -48,14 +48,27 @@ import services from '../data/services.json';
           </div>
 
           <!-- Price -->
-          <div class="flex flex-col items-start lg:items-end justify-between">
-            <div class="text-right">
+          <div class="flex flex-col items-start lg:items-end justify-between gap-6">
+            <div class="lg:text-right">
               <p class="font-display text-5xl text-charcoal">{service.price}</p>
               <p class="text-charcoal-light text-sm mt-1">{service.duration.split('·')[0].trim()}</p>
             </div>
-            <Button href="https://calendly.com/realityspirituality" variant="primary" external>
-              {service.cta}
-            </Button>
+            <div class="flex flex-col gap-3 w-full lg:items-end">
+              <Button href={service.paypalUrl} variant="primary" external>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.99l-.285 1.809c-.05.32.216.596.534.596h3.81c.46 0 .85-.334.922-.788l.038-.19.734-4.653.047-.256a.932.932 0 0 1 .92-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.16-4.704z"/>
+                </svg>
+                {service.cta} — Pay via PayPal
+              </Button>
+              <a
+                href="https://calendly.com/realityspirituality"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm text-charcoal-light hover:text-terracotta transition-colors text-center lg:text-right"
+              >
+                Or book a free consultation first →
+              </a>
+            </div>
           </div>
         </div>
       ))}

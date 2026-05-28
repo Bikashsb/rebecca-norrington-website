@@ -26,21 +26,21 @@ import books from '../data/books.json';
         <!-- Book Visual -->
         <div class="flex justify-center">
           <div class="relative">
-            <div class="w-72 h-96 rounded-xl shadow-2xl bg-gradient-to-br from-terracotta to-terracotta-dark flex flex-col items-center justify-center p-10 text-white text-center">
-              <div class="w-16 h-px bg-gold mb-5"></div>
-              <p class="font-display text-3xl font-light leading-tight mb-3">{book.title}</p>
-              {book.subtitle && <p class="text-white/60 text-sm leading-snug mb-5 italic">{book.subtitle}</p>}
-              <div class="w-16 h-px bg-gold mb-5"></div>
-              <p class="text-white/70 text-xs tracking-widest uppercase">{book.author}</p>
-            </div>
+            <img
+              src={book.cover}
+              alt={`${book.title} by ${book.author}`}
+              class="w-64 rounded-xl shadow-2xl"
+            />
             <div class="absolute inset-0 translate-x-4 translate-y-4 rounded-xl bg-charcoal/20 -z-10"></div>
           </div>
         </div>
 
         <!-- Book Info -->
         <div>
+          {book.series && <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">{book.series}</p>}
           <h2 class="font-display text-4xl font-light text-charcoal leading-tight mb-2">{book.title}</h2>
-          {book.subtitle && <p class="text-charcoal-light italic mb-6">{book.subtitle}</p>}
+          {book.subtitle && <p class="text-charcoal-light italic mb-2">{book.subtitle}</p>}
+          <p class="text-gold text-xs font-medium tracking-wide mb-6">International Bestseller</p>
           <p class="text-charcoal-light leading-relaxed mb-8">{book.description}</p>
 
           <div class="flex flex-wrap gap-4 mb-8">

@@ -1,11 +1,12 @@
 [
   {
-    "title": "The Truth About Happiness",
-    "subtitle": "A Practical Guide to Living Joyfully",
+    "title": "Programmed for Unhappiness",
+    "subtitle": "Exposing the Untold Truth",
+    "series": "RealitySpirituality",
     "author": "Rebecca L. Norrington",
-    "description": "In this transformative guide, Rebecca draws on decades of personal experience and professional practice to reveal what happiness truly is — and how to cultivate it as a daily skill. Whether you're navigating grief, relationship challenges, or simply the quiet unhappiness of a life that looks good from the outside, this book offers practical tools rooted in personal responsibility and spiritual awareness.",
+    "description": "In this international bestseller, Rebecca exposes 55 programmed behaviors — across three levels — that have been proven to subtract from happiness, inner peace, and contentment. Controversial and empowering, this book challenges everything you think you know about why you're unhappy and hands you the tools to change it. A must-read for anyone ready to take radical responsibility for their own joy.",
     "amazonUrl": "https://amzn.to/3PQttPP",
-    "cover": "/images/book-cover-placeholder.jpg",
+    "cover": "/images/book-cover.jpg",
     "featured": true
   }
 ]
