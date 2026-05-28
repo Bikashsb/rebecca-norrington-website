@@ -48,8 +48,8 @@ import services from '../data/services.json';
           </div>
 
           <!-- Price -->
-          <div class="flex flex-col items-start lg:items-end justify-between gap-6">
-            <div class="lg:text-right">
+          <div class="flex flex-col items-center lg:items-end justify-between gap-6">
+            <div class="text-center lg:text-right">
               <p class="font-display text-5xl text-charcoal">{service.price}</p>
               <p class="text-charcoal-light text-sm mt-1">{service.duration.split('·')[0].trim()}</p>
             </div>
@@ -100,7 +100,7 @@ import services from '../data/services.json';
         <p class="text-charcoal-light leading-relaxed mb-8">
           Would you like to hire Rebecca to speak at your event? She is available for workshops, keynotes, and panel discussions on happiness, wellbeing, and the RealitySpirituality approach.
         </p>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
           <Button href="/contact" variant="primary">Get in Touch</Button>
           <Button href="https://calendly.com/realityspirituality" variant="outline" external>Free Consultation</Button>
         </div>
