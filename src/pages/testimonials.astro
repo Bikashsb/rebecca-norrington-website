@@ -11,11 +11,18 @@ import testimonials from '../data/testimonials.json';
 >
 
   <!-- Page Hero -->
-  <section class="pt-32 pb-16 bg-cream-dark">
-    <div class="max-w-7xl mx-auto px-6">
-      <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">Social Proof</p>
-      <h1 class="font-display text-5xl md:text-6xl font-light text-charcoal leading-tight">What People Say</h1>
-      <p class="mt-4 text-charcoal-light text-lg max-w-lg">Real words from real clients and students whose lives have been touched by Rebecca's teaching.</p>
+  <section class="relative pt-32 pb-16 bg-cream-dark overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-10">
+      <div class="flex-1">
+        <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">Social Proof</p>
+        <h1 class="font-display text-5xl md:text-6xl font-light text-charcoal leading-tight">What People Say</h1>
+        <p class="mt-4 text-charcoal-light text-lg max-w-lg">Real words from real clients and students whose lives have been touched by Rebecca's teaching.</p>
+      </div>
+      <div class="hidden lg:block shrink-0">
+        <div class="w-64 h-80 rounded-2xl overflow-hidden shadow-2xl">
+          <img src="/images/interviewside.jpg" alt="Rebecca L. Norrington" class="w-full h-full object-cover" />
+        </div>
+      </div>
     </div>
   </section>
 

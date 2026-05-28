@@ -51,13 +51,21 @@ const currentPath = Astro.url.pathname;
       ))}
     </nav>
 
-    <!-- Donation CTA -->
+    <!-- CTA Buttons -->
     <div class="hidden lg:flex items-center gap-3">
+      <a
+        href="https://calendly.com/realityspirituality"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-5 py-2 rounded-full text-sm font-medium tracking-wide transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal"
+      >
+        Free 20-Min Call
+      </a>
       <a
         href="/donation"
         class="px-5 py-2 rounded-full text-sm font-medium tracking-wide transition-all duration-200 bg-terracotta text-white hover:bg-terracotta-dark"
       >
-        Make a Donation
+        Donate
       </a>
     </div>
 
@@ -101,8 +109,17 @@ const currentPath = Astro.url.pathname;
         </a>
       ))}
       <a
+        href="https://calendly.com/realityspirituality"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 px-5 py-3 rounded-full text-center text-sm font-medium border-2 border-gold text-gold hover:bg-gold hover:text-charcoal transition-colors"
+        @click="open = false"
+      >
+        Book Free 20-Min Consultation
+      </a>
+      <a
         href="/donation"
-        class="mt-4 px-5 py-3 rounded-full text-center text-sm font-medium bg-terracotta text-white hover:bg-terracotta-dark transition-colors"
+        class="mt-2 px-5 py-3 rounded-full text-center text-sm font-medium bg-terracotta text-white hover:bg-terracotta-dark transition-colors"
         @click="open = false"
       >
         Make a Donation
