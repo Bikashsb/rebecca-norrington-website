@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with Rebecca L. Norrington. Questions about coaching, classes, retreats, or speaking engagements."
+>
+
+  <!-- Page Hero -->
+  <section class="pt-32 pb-16 bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">Reach Out</p>
+      <h1 class="font-display text-5xl md:text-6xl font-light text-charcoal leading-tight">Get in Touch</h1>
+      <p class="mt-4 text-charcoal-light text-lg max-w-lg">
+        Questions about sessions, classes, retreats, or speaking engagements? Rebecca would love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Grid -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+      <!-- Contact Options -->
+      <div class="space-y-6">
+        <h2 class="font-display text-3xl font-light text-charcoal mb-6">Ways to Connect</h2>
+
+        <a href="mailto:rln@rebeccanorrington.com" class="flex items-center gap-5 p-6 rounded-2xl bg-cream-dark hover:bg-terracotta hover:text-white group transition-all duration-200">
+          <div class="w-12 h-12 rounded-full bg-terracotta/20 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
+            <svg class="w-5 h-5 text-terracotta group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-medium text-charcoal group-hover:text-white">Email</p>
+            <p class="text-charcoal-light group-hover:text-white/80 text-sm">rln@rebeccanorrington.com</p>
+          </div>
+        </a>
+
+        <a href="https://calendly.com/realityspirituality" target="_blank" rel="noopener noreferrer" class="flex items-center gap-5 p-6 rounded-2xl bg-cream-dark hover:bg-terracotta hover:text-white group transition-all duration-200">
+          <div class="w-12 h-12 rounded-full bg-terracotta/20 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
+            <svg class="w-5 h-5 text-terracotta group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-medium text-charcoal group-hover:text-white">Book a Free Consultation</p>
+            <p class="text-charcoal-light group-hover:text-white/80 text-sm">20 minutes, no commitment</p>
+          </div>
+        </a>
+
+        <a href="http://www.realityspirituality.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-5 p-6 rounded-2xl bg-cream-dark hover:bg-terracotta hover:text-white group transition-all duration-200">
+          <div class="w-12 h-12 rounded-full bg-terracotta/20 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
+            <svg class="w-5 h-5 text-terracotta group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-medium text-charcoal group-hover:text-white">RealitySpirituality Radio</p>
+            <p class="text-charcoal-light group-hover:text-white/80 text-sm">realityspirituality.com</p>
+          </div>
+        </a>
+
+        <!-- Social Links -->
+        <div class="pt-4">
+          <p class="text-xs tracking-widest uppercase text-charcoal-light mb-4 font-medium">Follow Rebecca</p>
+          <div class="flex flex-wrap gap-3">
+            {[
+              { href: "https://www.facebook.com/RealitySpirituality", label: "Facebook" },
+              { href: "https://www.instagram.com/realityspirituality/", label: "Instagram" },
+              { href: "https://www.youtube.com/@RebeccaNorrington", label: "YouTube" },
+              { href: "https://www.linkedin.com/in/rebecca-l-norrington-b0849015/", label: "LinkedIn" },
+              { href: "https://twitter.com/rlnorrington", label: "Twitter" },
+            ].map(social => (
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 rounded-full bg-cream-dark text-charcoal text-sm font-medium hover:bg-terracotta hover:text-white transition-all duration-200"
+              >
+                {social.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div>
+        <h2 class="font-display text-3xl font-light text-charcoal mb-6">Send a Message</h2>
+        <form action={`mailto:rln@rebeccanorrington.com`} method="get" class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="first" class="block text-sm font-medium text-charcoal mb-2">First Name</label>
+              <input
+                type="text"
+                id="first"
+                name="first"
+                class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta transition-colors"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-charcoal mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta transition-colors"
+                placeholder="your@email.com"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium text-charcoal mb-2">Subject</label>
+            <select
+              id="subject"
+              name="subject"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta transition-colors"
+            >
+              <option value="">Select a topic...</option>
+              <option>One-on-One Coaching</option>
+              <option>Classes & Courses</option>
+              <option>Retreat Inquiry</option>
+              <option>Speaking Engagement</option>
+              <option>Podcast / Media</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-charcoal mb-2">Message</label>
+            <textarea
+              id="message"
+              name="body"
+              rows="5"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta transition-colors resize-none"
+              placeholder="Tell Rebecca what you're looking for or ask any questions..."
+            ></textarea>
+          </div>
+
+          <Button href="mailto:rln@rebeccanorrington.com" variant="primary" size="lg">
+            Send Message
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+            </svg>
+          </Button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

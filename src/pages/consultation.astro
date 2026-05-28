@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout
+  title="Book Free Consultation"
+  description="Book a free 20-minute consultation with Rebecca L. Norrington to explore how coaching, classes, or retreats can help you."
+>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-charcoal text-white text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-gold text-xs tracking-widest uppercase mb-4 font-medium">First Step</p>
+      <h1 class="font-display text-5xl md:text-6xl font-light leading-tight mb-5">
+        Book a Free<br /><em class="italic text-gold">Consultation</em>
+      </h1>
+      <p class="text-white/70 text-lg max-w-md mx-auto leading-relaxed">
+        A free 20-minute call with Rebecca — no pressure, no commitment. Just an honest conversation about where you are and how she can help.
+      </p>
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="section-padding max-w-4xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+      {[
+        { number: "01", title: "20 Minutes", body: "A focused, unhurried conversation — enough time to really understand your situation." },
+        { number: "02", title: "No Pressure", body: "This is a conversation, not a sales call. Come as you are, with whatever is on your mind." },
+        { number: "03", title: "Real Guidance", body: "Rebecca will share honest perspective on what might help — whether that's coaching, a class, or a retreat." }
+      ].map(item => (
+        <div class="text-center p-7 rounded-2xl bg-cream-dark">
+          <span class="text-terracotta/30 font-display text-5xl font-light">{item.number}</span>
+          <h3 class="font-display text-xl font-light text-charcoal mt-3 mb-3">{item.title}</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">{item.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Calendly Embed -->
+    <div class="text-center">
+      <h2 class="font-display text-3xl font-light text-charcoal mb-5">Schedule Your Call</h2>
+      <p class="text-charcoal-light mb-8 max-w-md mx-auto leading-relaxed">
+        Click the button below to open Rebecca's booking calendar and choose a time that works for you.
+      </p>
+
+      <!-- Calendly inline embed container -->
+      <div class="bg-cream-dark rounded-3xl p-10 mb-6">
+        <div class="w-20 h-20 rounded-full bg-terracotta/10 flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <p class="text-charcoal-light mb-6">View Rebecca's available times and book your free consultation in seconds.</p>
+        <Button href="https://calendly.com/realityspirituality" variant="primary" size="lg" external>
+          Open Booking Calendar
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </Button>
+      </div>
+
+      <p class="text-charcoal-light text-sm">
+        Prefer email? Reach Rebecca at <a href="mailto:rln@rebeccanorrington.com" class="text-terracotta underline">rln@rebeccanorrington.com</a>
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>

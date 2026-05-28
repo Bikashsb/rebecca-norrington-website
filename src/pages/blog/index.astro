@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import Button from '../../components/ui/Button.astro';
+
+const categories = [
+  { name: "Happiness", slug: "happiness", description: "Practical tools and insights for building genuine, lasting happiness.", color: "bg-terracotta/10 border-terracotta text-terracotta" },
+  { name: "Emotional Healing", slug: "emotional-healing", description: "Navigating grief, loss, anxiety, and the full spectrum of human emotion.", color: "bg-sage/10 border-sage text-sage-dark" },
+  { name: "Confidence", slug: "confidence", description: "Building inner confidence that doesn't depend on external validation.", color: "bg-gold/10 border-gold text-gold-dark" },
+  { name: "Relationships", slug: "relationships", description: "Creating more loving, honest, and fulfilling connections with others.", color: "bg-terracotta/10 border-terracotta text-terracotta" },
+  { name: "Spiritual Growth", slug: "spiritual-growth", description: "Deepening your spiritual life while staying grounded in lived reality.", color: "bg-sage/10 border-sage text-sage-dark" },
+];
+---
+
+<BaseLayout
+  title="Blog"
+  description="Articles and insights from Rebecca L. Norrington on happiness, emotional healing, confidence, relationships, and spiritual growth."
+>
+
+  <!-- Page Hero -->
+  <section class="pt-32 pb-16 bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">Insights & Articles</p>
+      <h1 class="font-display text-5xl md:text-6xl font-light text-charcoal leading-tight">Rebecca's Blog</h1>
+      <p class="mt-4 text-charcoal-light text-lg max-w-lg">Practical wisdom and personal reflections on happiness, healing, and living well.</p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    <SectionHeading
+      eyebrow="Browse by Topic"
+      title="Categories"
+      subtitle="Explore articles across the five pillars of Rebecca's teaching."
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {categories.map(cat => (
+        <div class={`p-7 rounded-2xl border ${cat.color} hover:shadow-md transition-all duration-200 group cursor-pointer`}>
+          <h3 class="font-display text-2xl font-light mb-3 text-charcoal group-hover:text-terracotta transition-colors">{cat.name}</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">{cat.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Coming Soon notice -->
+    <div class="mt-16 text-center bg-cream-dark rounded-3xl p-12">
+      <div class="w-16 h-16 rounded-full bg-terracotta/10 flex items-center justify-center mx-auto mb-5">
+        <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+        </svg>
+      </div>
+      <h3 class="font-display text-3xl font-light text-charcoal mb-3">Articles Coming Soon</h3>
+      <p class="text-charcoal-light max-w-md mx-auto mb-6">
+        Rebecca is actively writing. Subscribe below to be the first to read new articles on happiness, healing, and wellbeing.
+      </p>
+      <Button href="/contact" variant="primary">Get Notified</Button>
+    </div>
+  </section>
+
+  <!-- Ask Rebecca CTA -->
+  <section class="section-padding bg-charcoal">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-gold text-xs tracking-widest uppercase mb-4 font-medium">Prefer a Personal Answer?</p>
+      <h2 class="font-display text-4xl font-light text-white mb-5 leading-tight">
+        Ask Rebecca Directly
+      </h2>
+      <p class="text-white/70 mb-8 max-w-md mx-auto leading-relaxed">
+        Have a specific question or challenge? Submit it to Ask Rebecca — she answers real questions from real people.
+      </p>
+      <Button href="/ask-rebecca" variant="gold" size="lg">Ask Rebecca</Button>
+    </div>
+  </section>
+
+</BaseLayout>

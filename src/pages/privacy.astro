@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Privacy Policy for rebeccanorrington.com — how we collect, use, and protect your information."
+>
+  <section class="pt-32 pb-16 bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="font-display text-5xl font-light text-charcoal">Privacy Policy</h1>
+      <p class="mt-3 text-charcoal-light">Last updated: {new Date().getFullYear()}</p>
+    </div>
+  </section>
+
+  <section class="section-padding max-w-3xl mx-auto px-6 prose prose-lg">
+    <div class="space-y-8 text-charcoal-light leading-relaxed">
+      <div>
+        <h2 class="font-display text-2xl font-light text-charcoal mb-3">Information We Collect</h2>
+        <p>When you contact Rebecca, book a consultation, or submit a question through this website, we may collect your name, email address, and any information you voluntarily provide in your message.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl font-light text-charcoal mb-3">How We Use Your Information</h2>
+        <p>Your information is used solely to respond to your inquiries, process bookings, and communicate about services you've requested. We do not sell, trade, or share your personal information with third parties.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl font-light text-charcoal mb-3">Third-Party Services</h2>
+        <p>This website uses third-party services including Calendly (for appointment booking) and PayPal (for donations). Each of these services has its own privacy policy, which we encourage you to review.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl font-light text-charcoal mb-3">Cookies</h2>
+        <p>This website may use basic cookies to improve your browsing experience. No personally identifiable information is stored in cookies.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl font-light text-charcoal mb-3">Contact</h2>
+        <p>For privacy-related questions, contact Rebecca at <a href="mailto:rln@rebeccanorrington.com" class="text-terracotta underline">rln@rebeccanorrington.com</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

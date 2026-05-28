@@ -1,0 +1,52 @@
+[
+  {
+    "id": "one-on-one",
+    "title": "One-on-One Sessions",
+    "price": "$85",
+    "duration": "55 minutes",
+    "description": "Individualized counseling addressing your personal challenges and goals. Weekly sessions recommended over 3+ months for lasting transformation.",
+    "icon": "heart",
+    "cta": "Book a Session",
+    "featured": true
+  },
+  {
+    "id": "truth-about-happiness",
+    "title": "The Truth About Happiness",
+    "price": "$240",
+    "duration": "8-week course · 55 min/week",
+    "description": "An educational program teaching you to manage happiness even during life's difficulties. Covers relationship improvement, emotional regulation, parenting, and personal responsibility.",
+    "icon": "sun",
+    "cta": "Enroll Now",
+    "featured": true
+  },
+  {
+    "id": "tone-to-the-bone",
+    "title": "Tone to the Bone / Stretch",
+    "price": "$195",
+    "duration": "8-week course · 45 min/week",
+    "description": "AFAA-certified body toning and flexibility training targeting all major muscle groups. Build strength and mobility in a supportive, encouraging environment.",
+    "icon": "activity",
+    "cta": "Join Class",
+    "featured": false
+  },
+  {
+    "id": "chair-cardio",
+    "title": "Chair Cardio / Balance / Stretch",
+    "price": "$195",
+    "duration": "8-week course · 45 min/week",
+    "description": "Low-impact cardio with balance exercises designed to prevent falls, improve posture, and build lasting physical confidence — accessible for all fitness levels.",
+    "icon": "shield",
+    "cta": "Join Class",
+    "featured": false
+  },
+  {
+    "id": "foam-roller",
+    "title": "Foam Roller Class",
+    "price": "$195",
+    "duration": "8-week course · 45 min/week",
+    "description": "Self-myofascial release training to address muscle tension, promote circulation, and accelerate recovery. A deeply restorative practice for body and mind.",
+    "icon": "zap",
+    "cta": "Join Class",
+    "featured": false
+  }
+]

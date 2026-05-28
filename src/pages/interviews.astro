@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Button from '../components/ui/Button.astro';
+
+const interviews = [
+  {
+    type: "Podcast",
+    title: "Practicing The Skill Of Happiness",
+    host: "Dr. Pele",
+    platform: "Dr. Pele Platform",
+    description: "Rebecca discusses happiness as a learnable skill, practical daily habits, and how to find peace in difficult circumstances.",
+    color: "border-sage bg-sage/10"
+  },
+  {
+    type: "Podcast",
+    title: "A Fresh Perspective on Grief",
+    host: "Reclaim Your Health",
+    platform: "Reclaim Your Health Podcast",
+    description: "A conversation on navigating grief while maintaining inner stability — and how happiness practices support the healing journey.",
+    color: "border-terracotta bg-terracotta/10"
+  },
+  {
+    type: "Podcast",
+    title: "The Truth About Happiness",
+    host: "Reclaim Your Health",
+    platform: "Reclaim Your Health Podcast",
+    description: "Rebecca's core philosophy on what happiness really is, how to build it daily, and why so many people get stuck.",
+    color: "border-gold bg-gold/10"
+  },
+  {
+    type: "Radio",
+    title: "The Truth About Happiness",
+    host: "BITERADIO ME",
+    platform: "BlogTalkRadio",
+    description: "A radio discussion on the practical tools and mindset shifts that make sustained happiness possible.",
+    color: "border-sage bg-sage/10"
+  },
+  {
+    type: "Interview",
+    title: "Mantz & Mitchell — Reality Spirituality",
+    host: "Mantz & Mitchell",
+    platform: "Mantz & Mitchell Show",
+    description: "Rebecca joins Mantz & Mitchell to explore the intersection of real-world challenges and spiritual practice.",
+    color: "border-terracotta bg-terracotta/10"
+  }
+];
+---
+
+<BaseLayout
+  title="Interviews & Podcasts"
+  description="Listen to and watch Rebecca L. Norrington's podcast appearances, radio interviews, and YouTube conversations on happiness, grief, and wellbeing."
+>
+
+  <!-- Page Hero -->
+  <section class="pt-32 pb-16 bg-charcoal">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-gold text-xs tracking-widest uppercase mb-3 font-medium">Listen & Watch</p>
+      <h1 class="font-display text-5xl md:text-6xl font-light text-white leading-tight">Interviews & Podcasts</h1>
+      <p class="mt-4 text-white/60 text-lg max-w-lg">
+        Rebecca shares her insights on happiness, grief, relationships, and spiritual growth across podcasts, radio, and YouTube.
+      </p>
+    </div>
+  </section>
+
+  <!-- YouTube Featured -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    <div class="bg-cream-dark rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center gap-10">
+      <div class="w-20 h-20 rounded-full bg-red-500 flex items-center justify-center shrink-0">
+        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+        </svg>
+      </div>
+      <div class="flex-1 text-center md:text-left">
+        <h2 class="font-display text-3xl font-light text-charcoal mb-3">Watch on YouTube</h2>
+        <p class="text-charcoal-light leading-relaxed mb-6">
+          Rebecca's YouTube channel features full-length interviews, short teachings, fitness classes, and conversations on happiness, healing, and spiritual growth.
+        </p>
+        <Button href="https://www.youtube.com/@RebeccaNorrington" variant="secondary" size="lg" external>
+          Visit YouTube Channel
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interviews List -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    <SectionHeading
+      eyebrow="Featured Appearances"
+      title="Podcast & Radio"
+      subtitle="Rebecca has been featured across multiple platforms discussing happiness, grief, relationships, and spiritual growth."
+      align="left"
+    />
+
+    <div class="space-y-5">
+      {interviews.map(interview => (
+        <div class={`p-7 rounded-2xl border ${interview.color} hover:shadow-md transition-shadow duration-200`}>
+          <div class="flex flex-col md:flex-row md:items-center gap-4">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xs tracking-widest uppercase text-charcoal-light font-medium">{interview.type}</span>
+                <span class="text-charcoal-light text-xs">·</span>
+                <span class="text-xs text-charcoal-light">{interview.platform}</span>
+              </div>
+              <h3 class="font-display text-2xl font-light text-charcoal mb-2">{interview.title}</h3>
+              <p class="text-sm text-charcoal-light">with <strong>{interview.host}</strong></p>
+              <p class="text-sm text-charcoal-light leading-relaxed mt-2">{interview.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Radio -->
+  <section class="section-padding bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-terracotta text-xs tracking-widest uppercase mb-4 font-medium">Radio</p>
+          <h2 class="font-display text-4xl font-light text-charcoal mb-5">RealitySpirituality Radio</h2>
+          <p class="text-charcoal-light leading-relaxed mb-6">
+            Rebecca hosts her own radio program — RealitySpirituality — where she takes live calls and explores real-life challenges through the lens of personal responsibility, happiness, and spiritual practice.
+          </p>
+          <p class="text-charcoal-light leading-relaxed mb-8">
+            "Nothing is going to change unless you change." Tune in to hear Rebecca's unfiltered, compassionate, and practical perspective on what it takes to live a genuinely happy life.
+          </p>
+          <Button href="http://www.realityspirituality.com/" variant="primary" external>
+            Visit RealitySpirituality.com
+          </Button>
+        </div>
+
+        <div class="bg-charcoal rounded-2xl p-10 text-white text-center">
+          <div class="w-16 h-16 rounded-full bg-terracotta/30 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-light mb-2">RealitySpirituality</h3>
+          <p class="text-white/60 text-sm mb-6">Live calls · Real conversations · Practical wisdom</p>
+          <a
+            href="http://www.realityspirituality.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gold text-sm underline hover:text-gold-dark transition-colors"
+          >
+            realityspirituality.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Invite to Speak -->
+  <section class="section-padding max-w-7xl mx-auto px-6 text-center">
+    <h2 class="font-display text-4xl font-light text-charcoal mb-5">Invite Rebecca to Your Podcast or Event</h2>
+    <p class="text-charcoal-light max-w-md mx-auto leading-relaxed mb-8">
+      Rebecca is available for podcast interviews, radio appearances, keynote speaking, and panel discussions on happiness, wellbeing, and RealitySpirituality.
+    </p>
+    <Button href="/contact" variant="primary" size="lg">Get in Touch</Button>
+  </section>
+
+</BaseLayout>

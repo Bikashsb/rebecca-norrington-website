@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Button from '../components/ui/Button.astro';
+import qa from '../data/qa.json';
+---
+
+<BaseLayout
+  title="Ask Rebecca"
+  description="Rebecca L. Norrington answers real questions about happiness, anxiety, relationships, ego, and more. Ask your own question."
+>
+
+  <!-- Page Hero -->
+  <section class="pt-32 pb-16 bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">Q&A</p>
+      <h1 class="font-display text-5xl md:text-6xl font-light text-charcoal leading-tight">Ask Rebecca Anything</h1>
+      <p class="mt-4 text-charcoal-light text-lg max-w-lg">
+        The following questions are from real people with everyday challenges asking for Rebecca's perspective.
+      </p>
+    </div>
+  </section>
+
+  <!-- Q&A Accordion -->
+  <section class="section-padding max-w-4xl mx-auto px-6">
+    <div
+      x-data="{ open: null }"
+      class="space-y-4"
+    >
+      {qa.map((item, i) => (
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+          <button
+            class="w-full text-left p-7 flex items-center justify-between gap-4 hover:bg-cream-dark/50 transition-colors duration-200"
+            @click={`open = open === ${i} ? null : ${i}`}
+          >
+            <h2 class="font-display text-xl font-light text-charcoal leading-snug">{item.question}</h2>
+            <div
+              class="w-8 h-8 rounded-full bg-terracotta/10 flex items-center justify-center shrink-0 transition-transform duration-300"
+              :class={`open === ${i} ? 'rotate-45 bg-terracotta' : ''`}
+            >
+              <svg class="w-4 h-4 text-terracotta transition-colors" :class={`open === ${i} ? 'text-white' : ''`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+            </div>
+          </button>
+
+          <div
+            x-show={`open === ${i}`}
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="px-7 pb-7"
+          >
+            <div class="pt-4 border-t border-cream-dark">
+              <p class="text-charcoal-light leading-relaxed">{item.answer}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Submit a Question -->
+  <section class="section-padding bg-cream-dark">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <SectionHeading
+        eyebrow="Have a Question?"
+        title="Ask Rebecca"
+        subtitle="Submit your question below and Rebecca may answer it in a future post, video, or podcast."
+      />
+
+      <form
+        action="mailto:rln@rebeccanorrington.com"
+        method="get"
+        class="space-y-5 text-left"
+      >
+        <div>
+          <label for="name" class="block text-sm font-medium text-charcoal mb-2">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="First name is fine"
+            class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta transition-colors"
+          />
+        </div>
+        <div>
+          <label for="question" class="block text-sm font-medium text-charcoal mb-2">Your Question</label>
+          <textarea
+            id="question"
+            name="body"
+            rows="5"
+            placeholder="Share your question or challenge — the more specific, the more helpful Rebecca's answer can be..."
+            class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta transition-colors resize-none"
+          ></textarea>
+        </div>
+        <Button href="mailto:rln@rebeccanorrington.com" variant="primary" size="lg">
+          Submit Your Question
+        </Button>
+        <p class="text-charcoal-light text-xs">
+          Or email directly at <a href="mailto:rln@rebeccanorrington.com" class="text-terracotta underline">rln@rebeccanorrington.com</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+</BaseLayout>

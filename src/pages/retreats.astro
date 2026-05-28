@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Button from '../components/ui/Button.astro';
+
+const galleryImages = [
+  "/images/bR-t7p_A.jpeg",
+  "/images/XzAPXMkg.jpeg",
+  "/images/EHWtaR8A.jpeg",
+  "/images/vvsLATAA.jpeg",
+  "/images/EwAXe1ZQ.jpeg",
+  "/images/HiuROC3g.jpeg",
+  "/images/wJ4PBPxA.jpeg",
+  "/images/65N7p6LA.jpeg",
+  "/images/jxGzIMng.jpeg",
+  "/images/eRE2koyA.jpeg",
+  "/images/KyjM09Xg.jpeg",
+  "/images/1ey8nLsQ.jpeg",
+];
+
+const schedule = [
+  { day: "Friday", time: "7:00 – 9:00 PM", activity: "Welcome & Introduction" },
+  { day: "Saturday", time: "9:00 AM – 5:00 PM", activity: "Full Day Immersion" },
+  { day: "Sunday", time: "9:00 AM – 1:00 PM", activity: "Integration & Closing" },
+];
+---
+
+<BaseLayout
+  title="Retreats & Workshops"
+  description="A Place to Heal Retreat — weekend retreats and workshops in Southern Oregon. Guided meditation, fitness, nature, and happiness coaching with Rebecca L. Norrington."
+>
+
+  <!-- Hero -->
+  <section class="relative min-h-[70vh] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/Xk-QFovg-scaled.jpeg"
+        alt="A Place to Heal Retreat, Southern Oregon"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pb-16 pt-32">
+      <p class="text-gold text-xs tracking-widest uppercase mb-3 font-medium">Southern Oregon · A Place to Heal</p>
+      <h1 class="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-4">
+        Retreats &<br /><em class="italic">Workshops</em>
+      </h1>
+      <p class="text-white/70 text-lg max-w-lg">
+        A private, secluded sanctuary in Southern Oregon — designed for deep rest, healing, and transformative personal work.
+      </p>
+    </div>
+  </section>
+
+  <!-- About the Retreat -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-terracotta text-xs tracking-widest uppercase mb-4 font-medium">The Location</p>
+        <h2 class="font-display text-4xl font-light text-charcoal leading-tight mb-6">
+          A Place to Heal
+        </h2>
+        <div class="space-y-4 text-charcoal-light leading-relaxed">
+          <p>
+            Located in a private and secluded gated community in Southern Oregon, A Place to Heal Retreat overlooks a peaceful backyard creek — the perfect setting for releasing what no longer serves you and reconnecting with your inner sense of peace.
+          </p>
+          <p>
+            Surrounded by nature, wildlife, and the quiet rhythms of the Oregon landscape, each retreat is a carefully curated experience designed to help you recognize unconscious patterns, practice happiness-building habits, and return home transformed.
+          </p>
+        </div>
+
+        <!-- Schedule -->
+        <div class="mt-8">
+          <p class="text-xs tracking-widest uppercase text-charcoal-light mb-4 font-medium">Retreat Schedule</p>
+          <div class="space-y-3">
+            {schedule.map(item => (
+              <div class="flex gap-4 p-4 rounded-xl bg-cream-dark">
+                <div class="shrink-0">
+                  <p class="font-medium text-charcoal text-sm">{item.day}</p>
+                  <p class="text-terracotta text-xs">{item.time}</p>
+                </div>
+                <div class="w-px bg-cream-dark self-stretch mx-2"></div>
+                <p class="text-charcoal-light text-sm">{item.activity}</p>
+              </div>
+            ))}
+          </div>
+          <p class="text-charcoal-light text-xs mt-3 italic">Pricing: TBD — contact Rebecca for current rates</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        {galleryImages.slice(0, 4).map(img => (
+          <div class="aspect-square rounded-xl overflow-hidden bg-cream-dark">
+            <img src={img} alt="Retreat facility" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Learn -->
+  <section class="section-padding bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading
+        eyebrow="Outcomes"
+        title="What You'll Experience"
+        subtitle="Each retreat is intentionally designed to help you leave with practical tools and a renewed relationship with happiness."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: "Recognize Unconscious Patterns", body: "Discover the habits and beliefs that have been quietly undermining your wellbeing — and learn to interrupt them." },
+          { title: "Experience True Contentment", body: "Practice the skill of feeling at peace, independent of external circumstances — a radical and liberating shift." },
+          { title: "Eliminate Happiness Blockers", body: "Identify and begin releasing the specific behaviors that are keeping you from the joy that's already available to you." },
+          { title: "Build Daily Practices", body: "Leave with a personalized toolkit of proven happiness-building habits you can sustain long after the retreat ends." },
+          { title: "Strengthen Connections", body: "Shared vulnerability and genuine community are among the most powerful forces for healing. You won't go through this alone." },
+          { title: "Reclaim Responsibility", body: "Discover the profound freedom that comes from taking full responsibility for your emotional state — not as blame, but as power." }
+        ].map(outcome => (
+          <div class="bg-white p-7 rounded-2xl hover:shadow-md transition-shadow duration-200">
+            <div class="w-10 h-10 rounded-full bg-sage/20 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-light text-charcoal mb-3">{outcome.title}</h3>
+            <p class="text-charcoal-light text-sm leading-relaxed">{outcome.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities & Amenities -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div>
+        <p class="text-terracotta text-xs tracking-widest uppercase mb-4 font-medium">On-Site</p>
+        <h2 class="font-display text-3xl font-light text-charcoal mb-6">Activities</h2>
+        <ul class="space-y-3">
+          {["Wildlife observation & nature walks", "Guided meditation sessions", "Fitness classes (AFAA certified)", "Nutrition instruction", "Bonfire experiences", "Hiking in the surrounding area"].map(a => (
+            <li class="flex items-center gap-3 text-charcoal-light">
+              <svg class="w-4 h-4 text-terracotta shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              {a}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-terracotta text-xs tracking-widest uppercase mb-4 font-medium">Included</p>
+        <h2 class="font-display text-3xl font-light text-charcoal mb-6">Amenities</h2>
+        <ul class="space-y-3">
+          {["Individual and group sessions", "Lodging with meals included", "Outdoor hot tub", "Massage chair", "Vibration therapy", "Reiki services"].map(a => (
+            <li class="flex items-center gap-3 text-charcoal-light">
+              <svg class="w-4 h-4 text-sage-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              {a}
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-8">
+          <p class="text-terracotta text-xs tracking-widest uppercase mb-4 font-medium">Nearby</p>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Local farms, wineries, breweries, wildlife parks, lakes, and a casino — all within 3 to 98 miles of the retreat center.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section-padding bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading
+        eyebrow="The Space"
+        title="Gallery"
+        subtitle="A glimpse into the peaceful surroundings of A Place to Heal Retreat."
+      />
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {galleryImages.map(img => (
+          <div class="aspect-square rounded-xl overflow-hidden bg-charcoal/10">
+            <img
+              src={img}
+              alt="A Place to Heal Retreat"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Book CTA -->
+  <section class="section-padding bg-charcoal">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-gold text-xs tracking-widest uppercase mb-4 font-medium">Reserve Your Spot</p>
+      <h2 class="font-display text-4xl md:text-5xl font-light text-white leading-tight mb-6">
+        Ready to Heal &<br /><em class="italic text-gold">Transform?</em>
+      </h2>
+      <p class="text-white/70 max-w-md mx-auto leading-relaxed mb-10">
+        Contact Rebecca to learn about upcoming retreat dates, pricing, and availability. Spots are limited for an intimate, personalized experience.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button href="/contact" variant="gold" size="lg">Book the Retreat</Button>
+        <Button href="https://calendly.com/realityspirituality" variant="outline" size="lg" external>Free Consultation First</Button>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout
+  title="Make a Donation"
+  description="Support Rebecca L. Norrington's mission to make happiness accessible to everyone. Donate via PayPal."
+>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-terracotta to-terracotta-dark text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+        </svg>
+      </div>
+      <p class="text-gold text-xs tracking-widest uppercase mb-4 font-medium">Support the Mission</p>
+      <h1 class="font-display text-5xl md:text-6xl font-light leading-tight mb-6">
+        Help Spread<br /><em class="italic">Happiness</em>
+      </h1>
+      <p class="text-white/80 text-lg max-w-md mx-auto leading-relaxed">
+        Your generosity helps Rebecca continue creating free content, running low-cost programs, and making happiness tools accessible to more people.
+      </p>
+    </div>
+  </section>
+
+  <!-- Donation Section -->
+  <section class="section-padding max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="font-display text-4xl font-light text-charcoal mb-5">Every Contribution Matters</h2>
+      <p class="text-charcoal-light max-w-lg mx-auto leading-relaxed">
+        Rebecca's work includes free YouTube content, low-cost community programs, and subsidized coaching for those who cannot afford full rates. Your donation directly enables this work.
+      </p>
+    </div>
+
+    <!-- What donations support -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+      {[
+        { title: "Free Content", body: "YouTube teachings, Ask Rebecca Q&As, and blog articles — all free, all made possible by donors.", icon: "🎥" },
+        { title: "Community Programs", body: "Subsidized happiness classes and fitness programs for community members who need them most.", icon: "🤝" },
+        { title: "Retreat Scholarships", body: "Supporting individuals who want to attend a retreat but face financial barriers to accessing healing.", icon: "🌿" }
+      ].map(item => (
+        <div class="text-center p-8 rounded-2xl bg-cream-dark">
+          <div class="text-4xl mb-4">{item.icon}</div>
+          <h3 class="font-display text-xl font-light text-charcoal mb-3">{item.title}</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">{item.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Donate button -->
+    <div class="text-center bg-cream-dark rounded-3xl p-12">
+      <p class="text-charcoal-light mb-6 leading-relaxed max-w-md mx-auto">
+        Donations are processed securely through PayPal. You can choose any amount that feels right.
+      </p>
+      <Button href="https://www.paypal.com/paypalme/rebeccalnorrington/" variant="primary" size="lg" external>
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.99l-.285 1.809c-.05.32.216.596.534.596h3.81c.46 0 .85-.334.922-.788l.038-.19.734-4.653.047-.256a.932.932 0 0 1 .92-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.16-4.704z"/>
+        </svg>
+        Donate via PayPal
+      </Button>
+      <p class="text-charcoal-light text-xs mt-4">Secure payment · Any amount welcome · Thank you</p>
+    </div>
+  </section>
+
+  <!-- Thank you message -->
+  <section class="section-padding bg-charcoal">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <blockquote class="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-5">
+        "Happiness shared is happiness multiplied."
+      </blockquote>
+      <p class="text-white/50 text-sm">— Rebecca L. Norrington</p>
+    </div>
+  </section>
+
+</BaseLayout>

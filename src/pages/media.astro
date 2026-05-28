@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout
+  title="Media & Press"
+  description="Rebecca L. Norrington's media appearances, press features, TV appearances, radio shows, and social media presence."
+>
+
+  <!-- Page Hero -->
+  <section class="pt-32 pb-16 bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">Press & Media</p>
+      <h1 class="font-display text-5xl md:text-6xl font-light text-charcoal leading-tight">Media Kit</h1>
+      <p class="mt-4 text-charcoal-light text-lg max-w-lg">
+        For journalists, podcast hosts, and event organizers — everything you need to feature Rebecca.
+      </p>
+    </div>
+  </section>
+
+  <!-- Bio for Media -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="font-display text-3xl font-light text-charcoal mb-5">Short Bio</h2>
+        <div class="space-y-4 text-charcoal-light leading-relaxed">
+          <p>
+            Rebecca L. Norrington is a Happiness Specialist, AFAA-certified fitness instructor, life coach, author, and podcast host based in California. She is the creator of <em>RealitySpirituality</em> — a practical approach to happiness that blends human experience with spiritual practice.
+          </p>
+          <p>
+            Rebecca has taught thousands of students through her live classes, online courses, one-on-one coaching, and immersive retreats in Southern Oregon. She is a sought-after speaker and podcast guest on the topics of happiness, grief, relationships, and personal responsibility.
+          </p>
+          <p>
+            Her core message: happiness is a practiced skill, not a circumstance — and it is available to everyone.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="font-display text-3xl font-light text-charcoal mb-5">Topics Rebecca Speaks On</h2>
+        <div class="grid grid-cols-1 gap-3">
+          {[
+            "Happiness as a practiced skill",
+            "The truth about what happiness really is",
+            "Personal responsibility and emotional freedom",
+            "Grief and a fresh perspective on loss",
+            "RealitySpirituality: where human experience meets spiritual practice",
+            "Practical tools for managing anxiety and overwhelm",
+            "Relationships, ego, and the happiness blockers",
+            "Fitness and emotional wellbeing: the connection"
+          ].map(topic => (
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-cream-dark">
+              <svg class="w-4 h-4 text-terracotta shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-charcoal text-sm">{topic}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social / Online Presence -->
+  <section class="section-padding bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="font-display text-3xl font-light text-charcoal mb-8">Online Presence</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          { platform: "YouTube", handle: "@RebeccaNorrington", url: "https://www.youtube.com/@RebeccaNorrington", description: "Full interviews, classes, and teachings" },
+          { platform: "Instagram", handle: "@realityspirituality", url: "https://www.instagram.com/realityspirituality/", description: "Daily inspiration and updates" },
+          { platform: "Facebook", handle: "RealitySpirituality", url: "https://www.facebook.com/RealitySpirituality", description: "Community and announcements" },
+          { platform: "LinkedIn", handle: "Rebecca L. Norrington", url: "https://www.linkedin.com/in/rebecca-l-norrington-b0849015/", description: "Professional network and speaking" },
+          { platform: "Twitter / X", handle: "@rlnorrington", url: "https://twitter.com/rlnorrington", description: "Thoughts and conversations" },
+          { platform: "Radio", handle: "RealitySpirituality.com", url: "http://www.realityspirituality.com/", description: "Live radio show and archives" },
+        ].map(social => (
+          <a
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-start gap-4 p-5 rounded-xl bg-white hover:shadow-md transition-shadow duration-200"
+          >
+            <div class="w-10 h-10 rounded-full bg-terracotta/10 flex items-center justify-center shrink-0 text-terracotta font-display font-light">
+              {social.platform.charAt(0)}
+            </div>
+            <div>
+              <p class="font-medium text-charcoal text-sm">{social.platform}</p>
+              <p class="text-terracotta text-xs">{social.handle}</p>
+              <p class="text-charcoal-light text-xs mt-1">{social.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Rebecca -->
+  <section class="section-padding max-w-7xl mx-auto px-6 text-center">
+    <h2 class="font-display text-4xl font-light text-charcoal mb-5">Book Rebecca for Your Platform</h2>
+    <p class="text-charcoal-light max-w-md mx-auto leading-relaxed mb-8">
+      Whether it's a podcast, radio show, keynote, or panel — Rebecca brings warmth, wisdom, and practical insight to every conversation.
+    </p>
+    <Button href="/contact" variant="primary" size="lg">Get in Touch</Button>
+  </section>
+
+</BaseLayout>

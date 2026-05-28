@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Button from '../components/ui/Button.astro';
+import books from '../data/books.json';
+---
+
+<BaseLayout
+  title="Books"
+  description="Books by Rebecca L. Norrington — practical guides to discovering and practicing happiness. Available on Amazon."
+>
+
+  <!-- Page Hero -->
+  <section class="relative pt-32 pb-20 bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">Written Works</p>
+      <h1 class="font-display text-5xl md:text-6xl font-light text-charcoal leading-tight">Books by Rebecca</h1>
+      <p class="mt-4 text-charcoal-light text-lg max-w-md">Practical wisdom for discovering and sustaining happiness — available now.</p>
+    </div>
+  </section>
+
+  <!-- Books -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    {books.map(book => (
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <!-- Book Visual -->
+        <div class="flex justify-center">
+          <div class="relative">
+            <div class="w-72 h-96 rounded-xl shadow-2xl bg-gradient-to-br from-terracotta to-terracotta-dark flex flex-col items-center justify-center p-10 text-white text-center">
+              <div class="w-16 h-px bg-gold mb-5"></div>
+              <p class="font-display text-3xl font-light leading-tight mb-3">{book.title}</p>
+              {book.subtitle && <p class="text-white/60 text-sm leading-snug mb-5 italic">{book.subtitle}</p>}
+              <div class="w-16 h-px bg-gold mb-5"></div>
+              <p class="text-white/70 text-xs tracking-widest uppercase">{book.author}</p>
+            </div>
+            <div class="absolute inset-0 translate-x-4 translate-y-4 rounded-xl bg-charcoal/20 -z-10"></div>
+          </div>
+        </div>
+
+        <!-- Book Info -->
+        <div>
+          <h2 class="font-display text-4xl font-light text-charcoal leading-tight mb-2">{book.title}</h2>
+          {book.subtitle && <p class="text-charcoal-light italic mb-6">{book.subtitle}</p>}
+          <p class="text-charcoal-light leading-relaxed mb-8">{book.description}</p>
+
+          <div class="flex flex-wrap gap-4 mb-8">
+            <Button href={book.amazonUrl} variant="primary" size="lg" external>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.93 17.09c-.16.25-.48.33-.73.19a28.7 28.7 0 01-7.48-5.38 28.8 28.8 0 01-5.38-7.48c-.14-.25-.06-.57.19-.73l1.2-.73c.45-.27.62-.83.39-1.3L2.38.73C2.14.27 1.57.07 1.1.3L.35.75C-.82 1.42-.26 3.1.29 4.05c1.3 2.24 2.91 4.33 4.78 6.19a30.96 30.96 0 006.19 4.78c.95.55 2.63 1.1 3.3-.06l.45-.75c.23-.47.03-1.04-.5-1.28l-2.92-1.62c-.47-.26-1.03-.09-1.3.39l-.73 1.2c-.15.25-.47.33-.73.19z"/>
+              </svg>
+              Buy on Amazon
+            </Button>
+            <a
+              href="https://amzn.to/3PQttPP"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-charcoal text-charcoal text-sm font-medium hover:bg-charcoal hover:text-white transition-all duration-200"
+            >
+              Learn More
+            </a>
+          </div>
+
+          <!-- Themes -->
+          <div>
+            <p class="text-xs tracking-widest uppercase text-charcoal-light mb-3 font-medium">What You'll Discover</p>
+            <div class="flex flex-wrap gap-2">
+              {["Happiness as a practiced skill", "Personal responsibility", "Managing difficult emotions", "Relationship healing", "Spiritual grounding", "Daily practices"].map(theme => (
+                <span class="px-3 py-1.5 rounded-full bg-terracotta/10 text-terracotta text-xs font-medium">{theme}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <!-- Quote from the book -->
+  <section class="section-padding bg-charcoal">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-gold text-xs tracking-widest uppercase mb-6 font-medium">From the Pages</p>
+      <blockquote class="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-6">
+        "You cannot have a happy ending to an unhappy journey."
+      </blockquote>
+      <p class="text-white/50 text-sm">— Abraham-Hicks, as shared by Rebecca</p>
+      <div class="mt-10">
+        <Button href="https://amzn.to/3PQttPP" variant="gold" size="lg" external>
+          Get the Book on Amazon
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaking / Events using the book -->
+  <section class="section-padding max-w-7xl mx-auto px-6 text-center">
+    <SectionHeading
+      eyebrow="Bring Rebecca to Your Event"
+      title="Book Rebecca to Speak"
+      subtitle="Rebecca is available to speak at events, workshops, and conferences on happiness, wellbeing, and RealitySpirituality."
+    />
+    <Button href="/contact" variant="primary" size="lg">
+      Get in Touch
+    </Button>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Button from '../components/ui/Button.astro';
+import services from '../data/services.json';
+---
+
+<BaseLayout
+  title="Services & Classes"
+  description="Work with Rebecca L. Norrington through one-on-one sessions, happiness courses, fitness classes, and healing sessions. See pricing and descriptions."
+>
+
+  <!-- Page Hero -->
+  <section class="relative pt-32 pb-20 bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">Work with Rebecca</p>
+      <h1 class="font-display text-5xl md:text-6xl font-light text-charcoal leading-tight">Services & Classes</h1>
+      <p class="mt-4 text-charcoal-light text-lg max-w-lg">
+        Whether you're new to happiness work or ready to go deeper — there's a program designed for exactly where you are.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    <div class="space-y-8">
+      {services.map((service, i) => (
+        <div id={service.id} class={`grid grid-cols-1 lg:grid-cols-3 gap-8 p-8 rounded-3xl ${service.featured ? 'bg-cream-dark border-2 border-terracotta/20' : 'bg-cream-dark'}`}>
+          <!-- Info -->
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-4">
+              {service.featured && (
+                <span class="px-3 py-1 rounded-full bg-terracotta text-white text-xs font-medium tracking-wide">Featured</span>
+              )}
+              <span class="text-charcoal-light text-xs">{service.duration}</span>
+            </div>
+            <h2 class="font-display text-3xl font-light text-charcoal mb-4 leading-snug">{service.title}</h2>
+            <p class="text-charcoal-light leading-relaxed mb-6">{service.description}</p>
+            <a
+              href="mailto:rln@rebeccanorrington.com"
+              class="inline-flex items-center gap-2 text-terracotta font-medium text-sm hover:text-terracotta-dark transition-colors"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              Email to Enroll
+            </a>
+          </div>
+
+          <!-- Price -->
+          <div class="flex flex-col items-start lg:items-end justify-between">
+            <div class="text-right">
+              <p class="font-display text-5xl text-charcoal">{service.price}</p>
+              <p class="text-charcoal-light text-sm mt-1">{service.duration.split('·')[0].trim()}</p>
+            </div>
+            <Button href="https://calendly.com/realityspirituality" variant="primary" external>
+              {service.cta}
+            </Button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="section-padding bg-charcoal">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-gold text-xs tracking-widest uppercase mb-5 font-medium">The Philosophy</p>
+      <blockquote class="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-6">
+        "Even though we do not have control over what happens to us, we do have control over the energetic vibration we emit."
+      </blockquote>
+      <p class="text-white/50 text-sm">— Rebecca L. Norrington</p>
+    </div>
+  </section>
+
+  <!-- Contact for custom -->
+  <section class="section-padding max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-terracotta text-xs tracking-widest uppercase mb-4 font-medium">Custom Programs</p>
+        <h2 class="font-display text-4xl font-light text-charcoal leading-tight mb-5">
+          Need Something Different?
+        </h2>
+        <p class="text-charcoal-light leading-relaxed mb-6">
+          Rebecca also offers customized programs for groups, corporate wellness, and speaking engagements. If you're looking for something not listed here — reach out and let's design a program that fits your needs.
+        </p>
+        <p class="text-charcoal-light leading-relaxed mb-8">
+          Would you like to hire Rebecca to speak at your event? She is available for workshops, keynotes, and panel discussions on happiness, wellbeing, and the RealitySpirituality approach.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href="/contact" variant="primary">Get in Touch</Button>
+          <Button href="https://calendly.com/realityspirituality" variant="outline" external>Free Consultation</Button>
+        </div>
+      </div>
+
+      <div class="bg-cream-dark rounded-2xl p-8">
+        <h3 class="font-display text-2xl font-light text-charcoal mb-5">Contact Rebecca</h3>
+        <div class="space-y-4">
+          <a href="mailto:rln@rebeccanorrington.com" class="flex items-center gap-3 text-charcoal-light hover:text-terracotta transition-colors">
+            <svg class="w-5 h-5 shrink-0 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            rln@rebeccanorrington.com
+          </a>
+          <a href="https://calendly.com/realityspirituality" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-charcoal-light hover:text-terracotta transition-colors">
+            <svg class="w-5 h-5 shrink-0 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Book Free 20-Minute Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
