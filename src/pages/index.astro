@@ -107,6 +107,84 @@ const featuredTestimonials = testimonials.slice(0, 6);
     </div>
   </section>
 
+  <!-- FORMULA FOR HAPPINESS -->
+  <section class="section-padding bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-terracotta text-xs tracking-widest uppercase mb-3 font-medium">Rebecca's Method</p>
+        <h2 class="font-display text-4xl md:text-5xl font-light text-charcoal leading-tight mb-5">The Formula for Happiness</h2>
+        <p class="text-charcoal-light leading-relaxed">
+          Happiness is a practiced skill. And like any other skill, the more you commit to the practice — and it is a daily practice — the better the results.
+        </p>
+        <p class="mt-4 text-charcoal font-medium">Are you willing to make happiness your top priority?</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Diminish -->
+        <div class="bg-white rounded-3xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-charcoal/10 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl font-light text-charcoal">10 Behaviors That Diminish Happiness</h3>
+          </div>
+          <ol class="space-y-3">
+            {[
+              "Having Expectations",
+              "Blaming Someone Else or a Circumstance for How You Feel",
+              "Comparing Yourself to Others",
+              "The Inability to Change a Perspective or a Belief",
+              "Worrying",
+              "Lack of Acceptance of Others",
+              "Believing Words Have Power",
+              "All Attachments",
+              "Noticing What Other People Are Doing (Mind Your Business)",
+              "Impatience"
+            ].map((item, i) => (
+              <li class="flex items-start gap-3 text-charcoal-light text-sm leading-snug">
+                <span class="font-display text-terracotta/40 text-lg leading-none shrink-0 w-5 text-right">{i + 1}</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <!-- Enhance -->
+        <div class="bg-terracotta rounded-3xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl font-light text-white">10 Behaviors That Enhance Happiness</h3>
+          </div>
+          <ol class="space-y-3">
+            {[
+              "Acceptance of Self and Others",
+              "Trust That Everything That Happens Has a Purpose",
+              "Don't Take Anything Personally",
+              "Laugh Out Loud Every Day",
+              "Self-Awareness",
+              "Humble Your Ego",
+              "BE Yourself",
+              "Choose Your Perspective & Choose Your Focus",
+              "LET GO of Trying to Control Anything or Anyone Outside of Self",
+              "Be Okay with Uncertainty"
+            ].map((item, i) => (
+              <li class="flex items-start gap-3 text-white/90 text-sm leading-snug">
+                <span class="font-display text-white/40 text-lg leading-none shrink-0 w-5 text-right">{i + 1}</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- BOOKS SPOTLIGHT -->
   <section class="bg-charcoal section-padding">
     <div class="max-w-7xl mx-auto px-6">
